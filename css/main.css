@@ -1,0 +1,408 @@
+* {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+:root {
+    font-size: 100%;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+a:hover,
+a:visited {
+    color: black;
+}
+ul {
+    list-style: none;
+}
+.container {
+    padding-inline: 15px;
+    margin:0 auto;
+}
+/*small screens*/
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/*medium screens*/
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/*large screens*/
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+header {
+    height: 50px;
+}
+header .bg {
+    position: absolute;
+    background-image: url("../images/backGround.jpg");
+    background-size: cover;
+    background-position: -10% 10%;
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+    animation: loadingBg 2s forwards;
+    -webkit-animation: loadingBg 2s forwards;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .container .logo {
+    display: block;
+    padding: .5em 1em .5em 0;
+    color: white;
+    font-size: 1.4em;
+}
+header .container nav {
+    display: none;
+    position: fixed;
+    right: 0%;
+    top: 50px;
+    z-index: 1000;
+    background-color: rgb(0 0 0 / .8);
+    width: 60%;
+    height: 100vh;
+}
+header .container nav .close-menu {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin: 1em;
+    cursor: pointer;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .container nav .close-menu::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+header .container nav .close-menu::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+header .container nav .close-menu:hover::after {
+    transform: rotate(45deg) ;
+    -webkit-transform: rotate(45deg) ;
+    -moz-transform: rotate(45deg) ;
+    -ms-transform: rotate(45deg) ;
+    -o-transform: rotate(45deg) ;
+}
+header .container nav .close-menu:hover::before {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+}
+header .container nav ul {
+    width: 100%;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+header .container nav ul li {
+    padding: .5em 0% .5em 3rem;
+    cursor: pointer;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+header .container nav ul li a {
+    color: white;
+    font-size: 1.2em;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+@media (max-width: 767px) {
+    header .container nav ul li:hover {
+        background-color: #eee;
+        padding-left: 3.5rem;   
+    }
+    header .container nav ul li:hover a {
+        color: black;
+    }
+}
+header .container .open-menu {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    
+}
+header .container .open-menu span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: white;
+}
+header .container .open-menu span:first-child {
+    width: 50%;
+    align-self: flex-end;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+header .container .open-menu span:last-child {
+    width: 50%;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+header .container .open-menu:hover span:last-child,
+header .container .open-menu:hover span:first-child {
+    width: 100%;
+}
+header .container nav.show-nav {
+    display: block;
+}
+.hero {
+    height: calc(100vh - 50px);
+    padding-top: 5rem;
+    
+}
+.hero .content {
+    width: 70%;
+    max-width: 400px;
+    margin-left: 2rem;
+}
+.hero .content h1 {
+    font-size: 2rem;
+    color: white;
+    line-height: 1;
+    margin-bottom: 3rem;
+}
+.hero .content p {
+    color: white;
+    font-size: 1.6rem;
+    line-height: 1;
+    margin-bottom: 6rem;
+}
+.hero .content .arrow {
+    position: relative;
+    width: 1px;
+    height: 150px;
+    background-color: white;
+    animation: moveArrow 2s infinite;
+    -webkit-animation: moveArrow .5s linear 2s infinite alternate;
+}
+.hero .content .arrow::before {
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 15px;
+    border: 1px solid;
+    border-color: transparent transparent white white;
+    transform: rotate(-45deg);
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    bottom: -1px;
+}
+@keyframes moveArrow {
+    from {
+        transform: translateY(-15px);
+        -webkit-transform: translateY(-15px);
+        -moz-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        -o-transform: translateY(-15px);
+    }
+    to {
+        transform: translateY(-5px);
+        -webkit-transform: translateY(-5px);
+        -moz-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+        -o-transform: translateY(-5px);
+}
+
+}
+@keyframes loadingBg {
+    from {
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+
+    }
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+    }
+}
+.products {
+    padding: 3rem 0%;
+}
+.products .sneaker:not(:last-child)  {
+    margin-bottom: 2rem;
+    
+}
+.products .sneaker .desc h2 {
+    margin-bottom: .5rem;
+}
+.products .sneaker .desc p {
+    margin-bottom: .5rem;
+    font-size: 1.1rem;
+}
+.products .sneaker img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+
+}
+.products .sneaker img:first-of-type {
+    object-position: left 38%;
+}
+@media (min-width: 768px) {
+    header .bg {
+        background-size: cover;
+        background-position: 30% 50%;
+        height: 100vh;
+        width: 50%;
+        right: 0%;
+    }
+    header .container .logo {
+        color: black;
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+    header .container .logo span {
+        color: tomato;
+    }
+    header .container nav {
+        display: block;
+        position: unset;
+        background-color: unset;
+        width: auto;
+        height: auto;
+        width: 50%;
+        display: flex;
+    }
+    header .container nav ul {
+        margin-top: 0%;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    header .container nav .close-menu {
+        display: none;
+    }
+    header .container .open-menu  {
+        display: none;
+    }
+    
+    header .container nav ul li {
+        padding: .2em 2em;
+    }
+    header .container nav ul li:not(:last-child) {
+        padding-right: 2em;
+    }
+    header .container nav ul li:last-child {
+        padding-right: 0%;
+    }
+    header .container nav ul li a {
+        font-size: 1.2em;
+    }
+    header .container nav ul li a:hover {
+        text-decoration: underline;
+    }
+    .hero .content {
+        width: 45%;
+        max-width: unset;
+        margin-left: 1rem;
+    
+        color: black;
+    }
+    .hero .content h1,
+    .hero .content p {
+        color: black;
+    }
+    .hero .content h1 {
+        font-size: 3rem;
+
+    }
+    .hero .content p {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+    .hero .content .arrow {
+        height: 100px;
+        background-color: black;
+    }
+    .hero .content .arrow::before {
+        border-bottom-color: black ;
+        border-left-color: black ;
+    }
+    .products .sneaker {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+    .products .sneaker img {
+        height: 200px;
+    }
+    .products .sneaker:nth-child(2) img {
+        order: -1;
+    }
+    .products .sneaker:not(:nth-child(2)) .desc {
+        justify-self: end;
+        text-align: right;
+
+    } 
+    
+}
+@media (min-width:992px) {
+    header .container nav ul li:not(:last-child) {
+        padding-right: 4em;
+    }
+    .hero .content p {
+
+        margin-bottom: 5rem;
+    }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>ShoeBrand</title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <header>
+            <div class="bg"></div>
+            <div class="container">
+                <a href="#" class="logo">Shoe<span>Brand</span></a>
+                <div id="hamberger-menu" class="open-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            
+            <nav>
+                <div id="menu-exit" class="close-menu"></div>
+                <ul>
+                    <li class="home"><a href="#">Home</a></li>
+                    <li><a href="#">Sneakers</a></li>
+                    <li><a href="#">Basckets</a></li>
+                </ul>
+            </nav>
+        </div>
+        </header>
+        <section class="hero">
+            <div class="container">
+                <div class="content">
+                    <h1>Regain your confidence on the court</h1>
+                    <p>A shoe built with purpose and to take your game to the next level.</p>
+                    <div class="arrow"></div>
+                </div>
+            </div>
+        </section>
+        <section class="products">
+            <div class="container">
+                <div class="sneaker">
+                    <div class="desc">
+                        <h2>Lightweight</h2>
+                        <p>Upper mesh material provides proper ventilation and reduction in the weight of the shoes.</p>
+                    </div>
+                    <img src="images/shoe1.jpg" alt="">
+                </div>
+                <div class="sneaker">
+                    <div class="desc">
+                        <h2>Durability </h2>
+                        <p>Lightweight, woven material  is durable and provide structure and support.</p>
+                    </div>
+                    <img src="images/shoe2.jpg" alt="">
+                </div>
+                <div class="sneaker">
+                    <div class="desc">
+                        <h2>Flexibility </h2>
+                        <p>Soft, flexible soles will allow the walker to push off easly with each step.</p>
+                    </div>
+                    <img src="images/shoe3.jpg" alt="">
+                </div>
+            </div>
+        </section>
+        <script>
+            const hamMenu = document.getElementById("hamberger-menu");
+            const closeNav = document.getElementById("menu-exit");
+            const navigation= document.querySelector("nav");
+            hamMenu.addEventListener('click',()=>{
+                    if(navigation.classList.contains("show-nav")){
+                        navigation.classList.remove("show-nav");
+                    }else {
+                        navigation.classList.add("show-nav");
+                    }
+                }
+            );
+            closeNav.addEventListener('click',()=>navigation.classList.remove("show-nav"));
+        </script>
+    </body>
+</html>
